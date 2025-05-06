@@ -1,6 +1,5 @@
 import Product from "../Product/Product";
 import { useEffect, useState } from "react";
-import axios from "axios";
 import ArticleList from "../ArticleList/ArticleList";
 import { fetchArticlesWithTopic } from "../../articles-api";
 
@@ -12,7 +11,7 @@ export default function App() {
 		async function fetchArticles() {
 			try {
 				setLoading(true);
-				const data = await fetchArticlesWithTopic("react"); console.log(response);
+				const data = await fetchArticlesWithTopic("react");
 				setArticles(data);
 				
 			} catch (error) {
