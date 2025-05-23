@@ -1,6 +1,10 @@
-export default function SearchForm() {
+export default function SearchForm({onSearch}) {
     const handleSubmit = (evt) => {
-        console.log(evt);
+        evt.preventDefault();
+        const form = evt.target;
+        const topic = form.elements.topic.value;
+        onSearch(topic);
+        form.reset();
     }
     
     return (
